@@ -20,11 +20,31 @@ abstract class Animal :IComparable<Animal> //abstract animal class created
 }
 sealed class Dog : Animal
 {
- public Dog(string name , int age):base(name, age)
+ public Dog(string name , int age):base(name, age) // passed from the base constructor
  { 
  }
  public override void Speak()
  {
     Console.WriteLine("Woof");
  }   
+}
+sealed class Cat : Animal
+{
+    public Cat(string name, int age): base(name, age)
+    {
+    }
+    public override void Speak()
+    {
+        Console.WriteLine("Meow");
+    }
+}
+class Shelter<T> where T : IComparable<Animal>
+{
+    T[] item;
+    public int Count{get; set;}
+    public void Add(T item)
+    {
+    }
+    
+
 }
