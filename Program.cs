@@ -18,7 +18,13 @@ abstract class Animal :IComparable<Animal> //abstract animal class created
     }
     public abstract  void Speak(); // initialied the abstrat  speak method so that other animal child class must override. 
 }
-class Cat : Animal
+sealed class Dog : Animal
 {
-    
+ public Dog(string name , int age):base(name, age)
+ { 
+ }
+ public override void Speak()
+ {
+    Console.WriteLine("Woof");
+ }   
 }
