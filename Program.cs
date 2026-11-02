@@ -38,13 +38,14 @@ sealed class Cat : Animal
         Console.WriteLine("Meow");
     }
 }
-class Shelter<T> where T : IComparable<Animal>
+class Shelter<T> where T : IComparable<T>
 {
-    T[] item;
-    public int Count{get; set;}
+    T[] items ;
+    public int Count{get; private set;}
     public void Add(T item)
     {
+        
+        T.items.add(item); 
+        Count = Count +1;
     }
-    
-
 }
