@@ -99,3 +99,17 @@ class Shelter<T> where T :Animal, IComparable<T>
      return minAnimal; // return the youngest animal by their age  
     }
 }
+static class AnimalExtensions //extension must be contained on static class 
+{
+    public static string ToDisplayString(this Animal a)
+    {
+      if( a == null)
+        {
+            throw new ArgumentNullException(nameof(a)); // chceking if the values are null or not 
+        }
+        else
+        {
+            return $"{a.Name} ({a.GetType().Name}, {a.Age} years)"; //returning the string version a.GetType().Name gives you whether the object is dog or cat (type)
+        }    
+    }
+}
