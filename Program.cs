@@ -38,14 +38,64 @@ sealed class Cat : Animal
         Console.WriteLine("Meow");
     }
 }
-class Shelter<T> where T : IComparable<T>
+class Shelter<T> where T :Animal, IComparable<T>
 {
-    T[] items ;
+    private T[] items;
     public int Count{get; private set;}
+    public Shelter(int capacity = 10)
+    {
+        items = new T[capacity]; 
+        Count = 0;
+    }
     public void Add(T item)
     {
-        
-        T.items.add(item); 
-        Count = Count +1;
+        if (Count == items.Length)
+        {
+            Grow();// grow if necessary when the array is full
+        }
+        items[Count] = item; //add the item into the next available index
+     
+        Count = Count +1; //Increase the count 
+    }
+    public void Grow()
+    {
+        T[] grow = new T[items.Length *2]; // increase the array length of items 
+        for(int i = 0; i< Count; i++) // looping to copy theold item to the new array grow
+        {
+          grow[i] = items[i];
+        }
+        items = grow;  // after copying giving item a new more bigger space to store more and its a reference 
+    }
+    public  T Max()
+    {
+     if (Count == 0)
+     {
+      throw new InvalidOperationException("Shelter is Empty");         
+     }
+     T maxAnimal = items[0]; //initialized the oldest one as the maximum one 
+     for( int i = 1 ; i< Count ; i++)
+        {
+         if( items[i].CompareTo(maxAnimal) > 0) // compare to find the maximum one,> 0  means current object is greater than the other  
+            {
+                maxAnimal = items[i]; //replace the maximum animal
+            }   
+        } 
+      return maxAnimal; // returning the oldest animal 
+    }
+    public T Min()
+    {
+     if (Count == 0)
+     {
+       throw new InvalidOperationException("Shelter is Empty");        
+     }
+     T minAnimal = items[0];
+     for(int i = 1 ; i < Count ; i++)
+     {
+      if(items[i].CompareTo(minAnimal)<0) // current object less than the other then younger 
+        {
+         minAnimal = items[i];         
+        }        
+     }
+     return minAnimal; // return the youngest animal by their age  
     }
 }
