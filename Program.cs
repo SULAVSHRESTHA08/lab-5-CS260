@@ -113,3 +113,7 @@ static class AnimalExtensions //extension must be contained on static class
         }    
     }
 }
+class Program
+{
+    
+}
