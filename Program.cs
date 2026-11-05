@@ -98,6 +98,16 @@ class Shelter<T> where T :Animal, IComparable<T>
      }
      return minAnimal; // return the youngest animal by their age  
     }
+    // key to access the animal on specific index
+    // Returns the animal at the specified index
+    public T GetAt(int index)
+    {
+        if (index < 0 || index >=Count)
+        {
+            throw new ArgumentOutOfRangeException();
+        }   
+            return items[index];
+    }
 }
 static class AnimalExtensions //extension must be contained on static class 
 {
