@@ -49,7 +49,7 @@ partial class AnimalRegistry
         }     
       }
     }  
-    catch (FileNotFounException)
+    catch (FileNotFoundException)
     {
      Console.WriteLine("Error: File not found. Please check the path and try again.");
     }
