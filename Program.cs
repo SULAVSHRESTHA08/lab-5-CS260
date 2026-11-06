@@ -125,5 +125,20 @@ static class AnimalExtensions //extension must be contained on static class
 }
 class Program
 {
-    
+ static void Main(string[]args)
+ {
+    AnimalRegistry registry = new AnimalRegistry();
+    try
+    {
+     registry.LoadFromFile("animal.txt");
+     registry.PrintAll();
+     registry.PrintOldest();
+     registry.PrintYoungest();
+     registry.PrintAverage();
+    }
+    catch(FileNotFoundException)
+    {
+      Console.WriteLine("Animal data file was not found");        
+    }
+ }    
 }
