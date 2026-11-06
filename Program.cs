@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.IO;
 
 
@@ -12,8 +12,11 @@ abstract class Animal :IComparable<Animal> //abstract animal class created
         Name = name;
         Age = age;
     }
-    public int CompareTo(Animal other) //initialized the compare to method that compares the object by their age 
+    public int CompareTo(Animal? other) //initialized the compare to method that compares the object by their age 
     {
+        if(other == null)
+          return 1;
+
         return this.Age.CompareTo(other.Age);  // this => other i.e assending order comparision 
     }
     public abstract  void Speak(); // initialied the abstrat  speak method so that other animal child class must override. 
@@ -44,6 +47,9 @@ class Shelter<T> where T :Animal, IComparable<T>
     public int Count{get; private set;}
     public Shelter(int capacity = 10)
     {
+        if (capacity <= 0)
+        throw new ArgumentOutOfRangeException(nameof(capacity));
+
         items = new T[capacity]; 
         Count = 0;
     }
@@ -117,10 +123,8 @@ static class AnimalExtensions //extension must be contained on static class
         {
             throw new ArgumentNullException(nameof(a)); // chceking if the values are null or not 
         }
-        else
-        {
-            return $"{a.Name} ({a.GetType().Name}, {a.Age} years)"; //returning the string version a.GetType().Name gives you whether the object is dog or cat (type)
-        }    
+        
+        return $"{a.Name} ({a.GetType().Name}, {a.Age} years)"; //returning the string version a.GetType().Name gives you whether the object is dog or cat (type)  
     }
 }
 class Program
@@ -130,7 +134,7 @@ class Program
     AnimalRegistry registry = new AnimalRegistry();
     try
     {
-     registry.LoadFromFile("animal.txt");
+     registry.LoadFromFile("animals.txt");
      registry.PrintAll();
      registry.PrintOldest();
      registry.PrintYoungest();
@@ -139,6 +143,10 @@ class Program
     catch(FileNotFoundException)
     {
       Console.WriteLine("Animal data file was not found");        
+    }
+    catch (IOException ex)
+    {
+        Console.WriteLine($"Error reading file: {ex.Message}");
     }
  }    
 }

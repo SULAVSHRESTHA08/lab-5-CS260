@@ -12,11 +12,21 @@ partial class AnimalRegistry
   } 
   public void PrintOldest()
   {
+    if (animals.Count == 0)
+    {  
+     Console.WriteLine("No animals in the shelter.");
+     return;
+    }
     Animal oldest = animals.Max();
    Console.WriteLine(oldest.ToDisplayString());
   } 
   public void PrintYoungest()
   {
+    if (animals.Count == 0)
+    {  
+     Console.WriteLine("No animals in the shelter.");
+     return;
+    }
     Animal youngest = animals.Min();
    Console.WriteLine(youngest.ToDisplayString());
   }
@@ -25,8 +35,8 @@ partial class AnimalRegistry
     int totalAge = 0;
     if (animals.Count == 0)
     {  
-    Console.WriteLine("No animals in the shelter.");
-    return;
+     Console.WriteLine("No animals in the shelter.");
+     return;
     }
     for(int i = 0; i < animals.Count ; i++)
     {

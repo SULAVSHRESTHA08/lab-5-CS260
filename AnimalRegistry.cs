@@ -49,7 +49,7 @@ partial class AnimalRegistry
         }     
       }
     }  
-    catch (FileNotFounException)
+    catch (FileNotFoundException)
     {
      Console.WriteLine("Error: File not found. Please check the path and try again.");
     }
@@ -60,10 +60,6 @@ partial class AnimalRegistry
     catch (Exception ex)
     {
       Console.WriteLine($"Error reading file: {ex.Message}");
-    }
-    catch (Exception ex)
-    {
-      Console.WriteLine($"An unexpected error occured: {ex.Message}");
     }
 }
 }

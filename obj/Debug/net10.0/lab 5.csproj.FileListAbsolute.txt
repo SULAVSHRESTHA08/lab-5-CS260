@@ -1,0 +1,15 @@
+D:\FALL 2026\CS 260\lab 5\bin\Debug\net10.0\lab 5.exe
+D:\FALL 2026\CS 260\lab 5\bin\Debug\net10.0\lab 5.deps.json
+D:\FALL 2026\CS 260\lab 5\bin\Debug\net10.0\lab 5.runtimeconfig.json
+D:\FALL 2026\CS 260\lab 5\bin\Debug\net10.0\lab 5.dll
+D:\FALL 2026\CS 260\lab 5\bin\Debug\net10.0\lab 5.pdb
+D:\FALL 2026\CS 260\lab 5\obj\Debug\net10.0\lab 5.GeneratedMSBuildEditorConfig.editorconfig
+D:\FALL 2026\CS 260\lab 5\obj\Debug\net10.0\lab 5.AssemblyInfoInputs.cache
+D:\FALL 2026\CS 260\lab 5\obj\Debug\net10.0\lab 5.AssemblyInfo.cs
+D:\FALL 2026\CS 260\lab 5\obj\Debug\net10.0\lab 5.csproj.CoreCompileInputs.cache
+D:\FALL 2026\CS 260\lab 5\obj\Debug\net10.0\lab 5.sourcelink.json
+D:\FALL 2026\CS 260\lab 5\obj\Debug\net10.0\lab 5.dll
+D:\FALL 2026\CS 260\lab 5\obj\Debug\net10.0\refint\lab 5.dll
+D:\FALL 2026\CS 260\lab 5\obj\Debug\net10.0\lab 5.pdb
+D:\FALL 2026\CS 260\lab 5\obj\Debug\net10.0\lab 5.genruntimeconfig.cache
+D:\FALL 2026\CS 260\lab 5\obj\Debug\net10.0\ref\lab 5.dll
